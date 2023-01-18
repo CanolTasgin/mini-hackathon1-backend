@@ -1,3 +1,5 @@
+# source env/bin/activate
+# pip freeze > requirements.txt
 # docker build --tag minihackathon1 .
 # docker run -d -p 5000:5000 minihackathon1
 # docker ps
