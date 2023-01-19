@@ -68,3 +68,11 @@ def delete_data(id):
         json.dump(data, f)
 
     return jsonify({"message": "Data deleted successfully."})
+
+
+@app.route("/food", methods=["GET"])
+def get_foods():
+    with open("food.json") as f:
+        foods = json.load(f)
+
+    return jsonify(foods)
