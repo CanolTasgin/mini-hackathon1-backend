@@ -21,19 +21,23 @@ Email
 1. go to https://beta.openai.com/account/api-keys > Top right corner > View API keys
 2. Create new secret key
 3. Copy the key to .env in this format OPENAI_API_KEY=sk-fxlzrsVQsoDs11tzlxxxxxxxxxxx
-Reference: https://github.com/openai/openai-python
+Reference: 
+https://github.com/openai/openai-python
+https://beta.openai.com/docs/api-reference/introduction
 """
 
 def send_email(text):
     try:
-        sender_email = os.environ.get("SENDER_EMAIL")
-        sender_password = os.environ.get("SENDER_PASSWORD")
-        receiver_email = os.environ.get("RECEIVER_EMAIL")
+        sender_email = os.getenv("SENDER_EMAIL")
+        sender_password = os.getenv("SENDER_PASSWORD")
+        receiver_email = os.getenv("RECEIVER_EMAIL")
     except:
-        print("""please define SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAIL in ENV VAR e.g
-                export SENDER_EMAIL=AAA@gmail.com
-                export SENDER_PASSWORD=password123
-                export RECEIVER_EMAIL=BBB@gmail.com
+        print("""please define SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAIL and OPENAI_API_KEY in ENV VAR e.g
+                    please config your env:
+                    SENDER_EMAIL=humbertechsociety@gmail.com
+                    RECEIVER_EMAIL=humbertechsociety@gmail.com
+                    SENDER_PASSWORD=xxx
+                    OPENAI_API_KEY=xxx
                 """ )
 
     message = """
@@ -89,7 +93,7 @@ def history_tracker(user_data_path, email):
 def gen_openai_image():
     #openai.organization = ""
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    image_resp = openai.Image.create(prompt="an unhealthy fat guy", n=1, size="512x512")
+    image_resp = openai.Image.create(prompt="an unhealthy guy in a hospital", n=1, size="512x512")
     print(image_resp)
     print(image_resp['data'][0]['url'])
     return image_resp['data'][0]['url']

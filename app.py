@@ -15,8 +15,12 @@ FOOD_DATA_PATH = FILE_PATH+"food.json"
 try:
     user_email = os.getenv("SENDER_EMAIL")
 except:
-    print("""please define SENDER_EMAIL in ENV VAR e.g
-            export SENDER_EMAIL=AAA@gmail.com
+    print("""please define SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAIL and OPENAI_API_KEY in ENV VAR e.g
+                please config your env:
+                SENDER_EMAIL=humbertechsociety@gmail.com
+                RECEIVER_EMAIL=humbertechsociety@gmail.com
+                SENDER_PASSWORD=xxx
+                OPENAI_API_KEY=xxx
             """ )
 
 CORS(app)
