@@ -4,6 +4,8 @@ from flask_cors import CORS
 import helper
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 # to simplify the data access, we just use a .json for the template
@@ -11,7 +13,7 @@ FILE_PATH = "data/"
 USER_DATA_PATH = FILE_PATH+"userdata.json"
 FOOD_DATA_PATH = FILE_PATH+"food.json"
 try:
-    user_email = os.environ.get("SENDER_EMAIL")
+    user_email = os.getenv("SENDER_EMAIL")
 except:
     print("""please define SENDER_EMAIL in ENV VAR e.g
             export SENDER_EMAIL=AAA@gmail.com
@@ -29,8 +31,9 @@ def get_data():
         data = json.load(f)
     return jsonify(data)
   
-@app.route("/data", methods=["POST"])
-def add_data(food_name):
+@app.route("/add_data", methods=["POST"])
+def add_data():
+    food_name = request.json.get('food_name')
     food_data={}
     user_data={}
     with open(USER_DATA_PATH, "r") as f:
@@ -61,7 +64,7 @@ def add_data(food_name):
     alert_bool = helper.history_tracker(USER_DATA_PATH, user_email)
     if alert_bool:
         helper.send_email('Health Risk Alert!!')
-
+    return "Done adding, {}!".format(food_name)
     # return jsonify({"message": "Data added successfully."})
 
 
@@ -95,6 +98,7 @@ def init_userdata():
 
 if __name__ == "__main__":
     init_userdata()
+    #helper.gen_openai_image()
     # testing
-    add_data('Banana')
+    app.run(host='0.0.0.0', debug=True)
 
