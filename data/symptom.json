@@ -1,0 +1,167 @@
+{
+  "Headache": {
+    "severity": 4,
+    "duration": 48,
+    "onset": "chronic",
+    "location": "forehead",
+    "context": "when stressed",
+    "associatedSymptoms": "nausea, fatigue",
+    "triggers": "lack of sleep"
+  },
+  "Nausea": {
+    "severity": 3,
+    "duration": 24,
+    "onset": "acute",
+    "location": "stomach",
+    "context": "when eating certain foods",
+    "associatedSymptoms": "headache, dizziness",
+    "triggers": "consuming spicy foods"
+  },
+  "Fatigue": {
+    "severity": 5,
+    "duration": 72,
+    "onset": "chronic",
+    "location": "whole body",
+    "context": "constant",
+    "associatedSymptoms": "depression, lack of motivation",
+    "triggers": "lack of sleep, physical activity"
+  },
+  "Depression": {
+    "severity": 4,
+    "duration": 96,
+    "onset": "chronic",
+    "location": "mind",
+    "context": "constant",
+    "associatedSymptoms": "fatigue, lack of motivation",
+    "triggers": "life events, stress"
+  },
+  "Lack of motivation": {
+    "severity": 3,
+    "duration": 48,
+    "onset": "acute",
+    "location": "mind",
+    "context": "when faced with certain tasks",
+    "associatedSymptoms": "depression, fatigue",
+    "triggers": "difficulty with task, lack of interest"
+  },
+  "Chest pain": {
+    "severity": 5,
+    "duration": 24,
+    "onset": "acute",
+    "location": "chest",
+    "context": "when exercising",
+    "associatedSymptoms": "shortness of breath, dizziness",
+    "triggers": "physical activity, stress"
+  },
+  "Shortness of breath": {
+    "severity": 4,
+    "duration": 48,
+    "onset": "chronic",
+    "location": "chest",
+    "context": "when lying down",
+    "associatedSymptoms": "chest pain, fatigue",
+    "triggers": "allergies, asthma"
+  },
+  "Dizziness": {
+    "severity": 3,
+    "duration": 24,
+    "onset": "acute",
+    "location": "head",
+    "context": "when standing up quickly",
+    "associatedSymptoms": "nausea, headache",
+    "triggers": "change in position, dehydration"
+  },
+  "Abdominal pain": {
+    "severity": 6,
+    "duration": 6,
+    "onset": "chronic",
+    "location": "upper right quadrant",
+    "context": "when eating",
+    "related symptoms": "nausea, diarrhea",
+    "aggravating factors": "fatty foods, stress"
+  },
+  "Back pain": {
+    "severity": 7,
+    "duration": 24,
+    "onset": "chronic",
+    "location": "lower back",
+    "context": "when sitting or standing for long periods",
+    "related symptoms": "stiffness, muscle spasms",
+    "aggravating factors": "cold weather, poor posture"
+  },
+  "Joint pain": {
+    "severity": 4,
+    "duration": 48,
+    "onset": "acute",
+    "location": "knees and ankles",
+    "context": "when walking or climbing stairs",
+    "related symptoms": "stiffness, swelling",
+    "aggravating factors": "cold weather, high humidity"
+  },
+  "Depression": {
+    "severity": 5,
+    "duration": 72,
+    "onset": "chronic",
+    "location": "emotional state",
+    "context": "throughout the day",
+    "related symptoms": "anxiety, irritability",
+    "aggravating factors": "stress, life changes"
+  },
+  "Difficulty breathing": {
+    "severity": 8,
+    "duration": 1,
+    "onset": "acute",
+    "location": "lungs",
+    "context": "when lying down or going to sleep",
+    "related symptoms": "coughing, wheezing",
+    "aggravating factors": "cold weather, pollution"
+  },
+  "Numbness": {
+    "severity": 5,
+    "duration": 48,
+    "onset": "chronic",
+    "location": "fingers and toes",
+    "context": "when cold",
+    "frequency": "occasionally",
+    "associated symptoms": "tingling, muscle weakness"
+  },
+
+  "Blurred Vision": {
+    "severity": 6,
+    "duration": 12,
+    "onset": "acute",
+    "location": "both eyes",
+    "context": "when tired",
+    "frequency": "occasionally",
+    "associated symptoms": "headache, double vision"
+  },
+  "Anxiety": {
+    "severity": 8,
+    "duration": 72,
+    "onset": "chronic",
+    "location": "mental",
+    "context": "when in social situations",
+    "frequency": "daily",
+    "associated symptoms": "nervousness, muscle tension"
+  },
+
+  "Rash": {
+    "severity": 7,
+    "duration": 24,
+    "onset": "acute",
+    "location": "legs",
+    "context": "when exposed to sun",
+    "frequency": "occasionally",
+    "associated symptoms": "itching, redness"
+  },
+
+  "Dyspnea": {
+    "severity": 8,
+    "duration": 48,
+    "onset": "acute",
+    "location": "chest",
+    "context": "when climbing stairs",
+    "frequency": "occasionally",
+    "associated symptoms": "coughing, wheezing"
+  }
+}

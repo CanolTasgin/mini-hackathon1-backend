@@ -3,12 +3,21 @@
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt 
+python app.py
 ```
 # For Windows:
 ```
 python -m venv venv
 venv\Scripts\activate.bat
 pip install -r requirements.txt
+python app.py
+```
+
+# To test the backend with curl, run
+```
+curl -X GET http://localhost:5000/data
+curl -X GET http://localhost:5000/symptom
+curl -X POST -H 'Content-Type: application/json' -d '{"symptom_name":"Headache"}' http://localhost:5000/add_data
 ```
  
 # To send email

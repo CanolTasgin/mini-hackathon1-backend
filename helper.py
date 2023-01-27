@@ -42,9 +42,9 @@ def send_email(text):
 
     message = """
     This is a test email sent using Python.
-    Custom String can be added here: {text}""".format(text=text)
+    Patient is at risk: {text}""".format(text=text)
     msg = MIMEMultipart('alternative')
-    msg["Subject"] = "Test Email in from a HTS workshop."
+    msg["Subject"] = "Test Email in from a HTS MiniHackathon."
     msg["From"] = sender_email
     msg["To"] = receiver_email
     msg.attach(MIMEText(message))
@@ -71,23 +71,23 @@ def send_email(text):
         server.quit()
 
 def history_tracker(user_data_path, email):
-    target_field = 'calories'
-    threshold = 150
+    target_field1 = 'duration'
+    threshold1 = 24 # in hours
+    target_field2 = 'severity'
+    threshold2 = 7
+    
     target_record = {}
     alert_bool = False
     with open(user_data_path, "r") as f:
         user_data = json.load(f)
-        target_record = user_data[email]["food_consumed"]
+        target_record = user_data[email]["symptom"]
 
-    for timestamp, food_records in target_record.items():
-        total_amount_per_timestamp = 0
-        for food in food_records:
-            if target_field in food:
-                total_amount_per_timestamp+=food[target_field]
-
-        if total_amount_per_timestamp > threshold:
-            print("{} is exceeding the {} threshold({} at {})".format(email, target_field, threshold, str(timestamp)))
-            alert_bool = True
+    for timestamp, symptom_records in target_record.items():
+        for symptom_record in symptom_records:
+            if symptom_record[target_field2] > threshold2 or symptom_record[target_field1]  > threshold1:
+                print("{} is exceeding the {} threshold({} at {})".format(email, target_field1, threshold1, str(timestamp)))
+                print("{} is exceeding the {} threshold({} at {})".format(email, target_field2, threshold2, str(timestamp)))
+                alert_bool = True
     return alert_bool
 
 def gen_openai_image():
