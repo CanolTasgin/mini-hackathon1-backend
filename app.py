@@ -78,11 +78,11 @@ def add_data():
 
 
 @app.route("/symptom", methods=["GET"])
-def get_foods():
+def get_symptom():
     with open(SYMPTOM_DATA_PATH) as f:
-        foods = json.load(f)
+        symptom = json.load(f)
 
-    return jsonify(foods)
+    return jsonify(symptom)
 
 def init_userdata():
     # to skip the authentication, we just hardcode here for now
@@ -107,5 +107,5 @@ def init_userdata():
 
 if __name__ == "__main__":
     init_userdata()
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port="8333" debug=True)
 
